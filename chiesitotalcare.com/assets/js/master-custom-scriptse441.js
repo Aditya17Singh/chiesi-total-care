@@ -671,3 +671,469 @@ if (heroBgContact.hasClass('container')) {
 } 
 
 });
+
+// eb-calculator
+function openTab(event, tabName) {
+    // Get all elements with class="tab" and hide them
+    const tabs = document.getElementsByClassName("tab");
+    for (let i = 0; i < tabs.length; i++) {
+      tabs[i].style.display = "none";
+    }
+
+    // Get all elements with class="tab-button" and remove the active class
+    const tabButtons = document.getElementsByClassName("tab-button");
+    for (let i = 0; i < tabButtons.length; i++) {
+      tabButtons[i].classList.remove("active");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(tabName).style.display = "block";
+    event.currentTarget.classList.add("active");
+}
+
+//Rules of 9
+$("#bsa-feet").hide();
+$("#bsa-inches").hide();
+
+function updateHeightInputs(units) {
+  if (units == "cms") {
+	$("#bsa-height").show();
+	$("#bsa-feet").hide();
+	$("#bsa-inches").hide();
+  } else {
+	$("#bsa-feet").show();
+	$("#bsa-inches").show();
+	$("#bsa-height").hide();
+  }
+}
+
+//Hide Step 1 Result
+$("#bsa-result").hide();
+//Hide All Next Steps
+$("#step2-box").hide();
+$("#step3-box").hide();
+$("#sidebar").hide();
+$("#kid-box").hide();
+$("#butt-aff-label").hide();
+$("#butt-aff").hide();
+$("#aff-result").hide();
+
+function loadStep1() {
+  console.log("Calculate BSA");
+
+  //Get Weight
+  var bsaw = $("#bsa-weight").val();
+  //Check Weight Units
+  var bsawunits = $("#bsa-weight-units").val();
+  if (bsawunits == "pds") {
+	bsaw = bsaw / 2.20462;
+	console.log("KGS: " + bsaw);
+  }
+
+  //Get Height
+  var bsah = $("#bsa-height").val();
+  //Check Height Units
+  var bsahunits = $("#bsa-height-units").val();
+  if (bsahunits == "inch") {
+	var feet = $("#bsa-feet").val();
+	var inches = $("#bsa-inches").val();
+	bsah = feet * 30.48 + inches * 2.54;
+	console.log("CMS: " + bsah);
+  }
+
+  //Apply formula
+  console.log(bsaw, bsah, "bsah");
+  var bsa = 0.0071874 * bsaw ** 0.425 * bsah ** 0.725;
+  console.log("BSA " + bsa.toFixed(2) + "m2");
+  //Show Result
+  $("#bsa-result").text("BSA: " + bsa.toFixed(2) + " m2");
+  $("#bsa-result").show();
+  //Show Next Step
+  $("#step2-box").show();
+
+  $("#bsa-value").val(bsa.toFixed(2) * 10000);
+
+  $("#bsa-weight").attr("disabled", true);
+  $("#bsa-height").attr("disabled", true);
+  $("#bsa-weight-units").attr("disabled", true);
+  $("#bsa-height-units").attr("disabled", true);
+  $("#bsa-gender").attr("disabled", true);
+  $("#step1-btn").hide();
+}
+
+function backStep1() {
+  $("#bsa-weight").attr("disabled", false);
+  $("#bsa-height").attr("disabled", false);
+  $("#bsa-weight-units").attr("disabled", false);
+  $("#bsa-height-units").attr("disabled", false);
+  $("#bsa-gender").attr("disabled", false);
+  $("#step1-btn").show();
+  //Hide Step 2
+  $("#step2-box").hide();
+}
+
+function updatePatientType(type) {
+  if (type == "kid") {
+	$("#kid-box").show();
+	$("#butt-aff-label").show();
+	$("#butt-aff").show();
+  } else {
+	$("#kid-box").hide();
+	$("#butt-aff-label").hide();
+	$("#butt-aff").hide();
+  }
+}
+
+function loadStep2() {
+  console.log("Calculate EPAA");
+
+  var head = 0.09;
+  var ftrunk = 0.18;
+  var rarm = 0.09;
+  var larm = 0.09;
+  var gnp = 0.01;
+  var rleg = 0.18;
+  var lleg = 0.18;
+  var btrunk = 0.18;
+  var butt = 0.0;
+
+  //Get Patient Type
+  var patient = $("#patient-type").val();
+  if (patient == "kid") {
+	ftrunk = 0.13;
+	rarm = 0.1;
+	larm = 0.1;
+	gnp = 0.01;
+	btrunk = 0.13;
+	butt = 0.05;
+	//Get Kid Age
+	var age = $("#kid-age").val();
+	if (age == "0") {
+	  head = 0.21;
+	  rleg = 0.14;
+	  lleg = 0.14;
+	} else if (age == "1") {
+	  head = 0.19;
+	  rleg = 0.15;
+	  lleg = 0.15;
+	} else if (age == "5") {
+	  head = 0.15;
+	  rleg = 0.17;
+	  lleg = 0.17;
+	} else if (age == "10") {
+	  head = 0.13;
+	  rleg = 0.185;
+	  lleg = 0.185;
+	} else {
+	  head = 0.11;
+	  rleg = 0.19;
+	  lleg = 0.19;
+	}
+  }
+
+  var affhead = head * ($("#head-aff").val() / 100);
+  var affftrunk = ftrunk * ($("#trunkf-aff").val() / 100);
+  var affrarm = rarm * ($("#rarm-aff").val() / 100);
+  var afflarm = larm * ($("#larm-aff").val() / 100);
+  var affgnp = gnp * ($("#gnp-aff").val() / 100);
+  var affrleg = rleg * ($("#rleg-aff").val() / 100);
+  var afflleg = lleg * ($("#lleg-aff").val() / 100);
+  var affbtrunk = btrunk * ($("#trunkb-aff").val() / 100);
+  var affbutt = butt * ($("#butt-aff").val() / 100);
+
+  //Apply formula
+  var epaa =
+	(affhead +
+	  affftrunk +
+	  affrarm +
+	  afflarm +
+	  affgnp +
+	  affrleg +
+	  afflleg +
+	  affbtrunk +
+	  affbutt) *
+	100;
+  console.log("EPAA " + epaa.toFixed(2) + "%");
+  console.log(epaa, "ewtrwtrety");
+  //Show Result
+  $("#aff-result").text("EPAA: " + epaa.toFixed(2) + "%");
+  $("#aff-result").show();
+  //Show Next Step
+  $("#step3-box").show();
+  var bsa = $("#bsa-value").val();
+  var aaa = (bsa * epaa) / 100;
+  console.log(bsa, epaa, "12321");
+  $("#aaa-result").text("AAA: " + aaa.toFixed(2) + " cm2");
+
+  $("#aaa-value").val(aaa.toFixed(2));
+
+  $("#step2-btn").hide();
+  $("#step2-btn-back").hide();
+
+  $("#head-aff").attr("disabled", true);
+  $("#trunkf-aff").attr("disabled", true);
+  $("#rarm-aff").attr("disabled", true);
+  $("#larm-aff").attr("disabled", true);
+  $("#gnp-aff").attr("disabled", true);
+  $("#rleg-aff").attr("disabled", true);
+  $("#lleg-aff").attr("disabled", true);
+  $("#trunkb-aff").attr("disabled", true);
+  $("#butt-aff").attr("disabled", true);
+}
+
+function backStep2() {
+  $("#head-aff").attr("disabled", false);
+  $("#trunkf-aff").attr("disabled", false);
+  $("#rarm-aff").attr("disabled", false);
+  $("#larm-aff").attr("disabled", false);
+  $("#gnp-aff").attr("disabled", false);
+  $("#rleg-aff").attr("disabled", false);
+  $("#lleg-aff").attr("disabled", false);
+  $("#trunkb-aff").attr("disabled", false);
+  $("#butt-aff").attr("disabled", false);
+  $("#step2-btn").show();
+  $("#step2-btn-back").show();
+  //Hide Step 2
+  $("#step3-box").hide();
+}
+
+function loadStep3() {
+  var tubesper = Math.ceil($("#aaa-value").val() / 250);
+  $("#tubes-per").text(tubesper);
+  $("#tubes-value").val(tubesper);
+  $("#sidebar").show();
+  var tubessupp = Math.ceil(tubesper * 30);
+  $("#tubes-total").text(tubessupp);
+  $("#step3-btn").hide();
+  $("#step3-btn-back").hide();
+}
+
+function loadMonthSupply(freq) {
+  var tubessupp = Math.ceil($("#tubes-value").val() * parseInt(freq));
+  $("#tubes-total").text(tubessupp);
+}
+
+function reloadForm() {
+  window.location.href = "/";
+}
+
+// Direct Measurement
+$("#bsa-feet").hide();
+$("#bsa-inches").hide();
+
+function updateHeightInputs(units) {
+  if (units == "cms") {
+    $("#bsa-height").show();
+    $("#bsa-feet").hide();
+    $("#bsa-inches").hide();
+  } else {
+    $("#bsa-feet").show();
+    $("#bsa-inches").show();
+    $("#bsa-height").hide();
+  }
+}
+
+//Hide Step 1 Result
+$("#bsa-result").hide();
+//Hide All Next Steps
+$("#sidebar").hide();
+$("#kid-box").hide();
+$("#butt-aff-label").hide();
+$("#butt-aff").hide();
+$("#aff-result").hide();
+
+function loadStep1() {
+  console.log("Calculate BSA");
+
+  //Get Weight
+  var bsaw = $("#bsa-weight").val();
+  //Check Weight Units
+  var bsawunits = $("#bsa-weight-units").val();
+  if (bsawunits == "pds") {
+    bsaw = bsaw / 2.20462;
+    console.log("KGS: " + bsaw);
+  }
+
+  //Get Height
+  var bsah = $("#bsa-height").val();
+  //Check Height Units
+  var bsahunits = $("#bsa-height-units").val();
+  if (bsahunits == "inch") {
+    var feet = $("#bsa-feet").val();
+    var inches = $("#bsa-inches").val();
+    bsah = feet * 30.48 + inches * 2.54;
+    console.log("CMS: " + bsah);
+  }
+
+  //Apply formula
+  var bsa = 0.0071874 * bsaw ** 0.425 * bsah ** 0.725;
+  console.log("BSA " + bsa.toFixed(2) + "m2");
+  //Show Result
+  $("#bsa-result").text("BSA: " + bsa.toFixed(2) + " m2");
+  $("#bsa-result").show();
+  //Show Next Step
+  $("#step2-box").show();
+
+  $("#bsa-value").val(bsa.toFixed(2) * 10000);
+
+  $("#bsa-weight").attr("disabled", true);
+  $("#bsa-height").attr("disabled", true);
+  $("#bsa-weight-units").attr("disabled", true);
+  $("#bsa-height-units").attr("disabled", true);
+  $("#bsa-gender").attr("disabled", true);
+  $("#step1-btn").hide();
+}
+
+function backStep1() {
+  $("#bsa-weight").attr("disabled", false);
+  $("#bsa-height").attr("disabled", false);
+  $("#bsa-weight-units").attr("disabled", false);
+  $("#bsa-height-units").attr("disabled", false);
+  $("#bsa-gender").attr("disabled", false);
+  $("#step1-btn").show();
+  //Hide Step 2
+  $("#step2-box").hide();
+}
+
+function updatePatientType(type) {
+  if (type == "kid") {
+    $("#kid-box").show();
+    $("#butt-aff-label").show();
+    $("#butt-aff").show();
+  } else {
+    $("#kid-box").hide();
+    $("#butt-aff-label").hide();
+    $("#butt-aff").hide();
+  }
+}
+
+function loadStep2() {
+  console.log("Calculate EPAA");
+
+  var head = 0.09;
+  var ftrunk = 0.18;
+  var rarm = 0.09;
+  var larm = 0.09;
+  var gnp = 0.01;
+  var rleg = 0.18;
+  var lleg = 0.18;
+  var btrunk = 0.18;
+  var butt = 0.0;
+
+  //Get Patient Type
+  var patient = $("#patient-type").val();
+  if (patient == "kid") {
+    ftrunk = 0.13;
+    rarm = 0.1;
+    larm = 0.1;
+    gnp = 0.01;
+    btrunk = 0.13;
+    butt = 0.05;
+    //Get Kid Age
+    var age = $("#kid-age").val();
+    if (age == "0") {
+      head = 0.21;
+      rleg = 0.14;
+      lleg = 0.14;
+    } else if (age == "1") {
+      head = 0.19;
+      rleg = 0.15;
+      lleg = 0.15;
+    } else if (age == "5") {
+      head = 0.15;
+      rleg = 0.17;
+      lleg = 0.17;
+    } else if (age == "10") {
+      head = 0.13;
+      rleg = 0.185;
+      lleg = 0.185;
+    } else {
+      head = 0.11;
+      rleg = 0.19;
+      lleg = 0.19;
+    }
+  }
+
+  var affhead = head * ($("#head-aff").val() / 100);
+  var affftrunk = ftrunk * ($("#trunkf-aff").val() / 100);
+  var affrarm = rarm * ($("#rarm-aff").val() / 100);
+  var afflarm = larm * ($("#larm-aff").val() / 100);
+  var affgnp = gnp * ($("#gnp-aff").val() / 100);
+  var affrleg = rleg * ($("#rleg-aff").val() / 100);
+  var afflleg = lleg * ($("#lleg-aff").val() / 100);
+  var affbtrunk = btrunk * ($("#trunkb-aff").val() / 100);
+  var affbutt = butt * ($("#butt-aff").val() / 100);
+
+  //Apply formula
+  var epaa =
+    (affhead +
+      affftrunk +
+      affrarm +
+      afflarm +
+      affgnp +
+      affrleg +
+      afflleg +
+      affbtrunk +
+      affbutt) *
+    100;
+  console.log("EPAA " + epaa.toFixed(2) + "%");
+  //Show Result
+  $("#aff-result").text("EPAA: " + epaa.toFixed(2) + "%");
+  $("#aff-result").show();
+  //Show Next Step
+  $("#step3-box").show();
+  var bsa = $("#bsa-value").val();
+  var aaa = (bsa * epaa) / 100;
+  $("#aaa-result").text("AAA: " + aaa.toFixed(2) + " cm2");
+
+  $("#aaa-value").val(aaa.toFixed(2));
+
+  $("#step2-btn").hide();
+  $("#step2-btn-back").hide();
+
+  $("#head-aff").attr("disabled", true);
+  $("#trunkf-aff").attr("disabled", true);
+  $("#rarm-aff").attr("disabled", true);
+  $("#larm-aff").attr("disabled", true);
+  $("#gnp-aff").attr("disabled", true);
+  $("#rleg-aff").attr("disabled", true);
+  $("#lleg-aff").attr("disabled", true);
+  $("#trunkb-aff").attr("disabled", true);
+  $("#butt-aff").attr("disabled", true);
+}
+
+function backStep2() {
+  $("#head-aff").attr("disabled", false);
+  $("#trunkf-aff").attr("disabled", false);
+  $("#rarm-aff").attr("disabled", false);
+  $("#larm-aff").attr("disabled", false);
+  $("#gnp-aff").attr("disabled", false);
+  $("#rleg-aff").attr("disabled", false);
+  $("#lleg-aff").attr("disabled", false);
+  $("#trunkb-aff").attr("disabled", false);
+  $("#butt-aff").attr("disabled", false);
+  $("#step2-btn").show();
+  $("#step2-btn-back").show();
+  //Hide Step 2
+  $("#step3-box").hide();
+}
+
+function loadStep3() {
+  var tubesper = Math.ceil($("#aaa-value").val() / 250);
+  $("#tubes-per").text(tubesper);
+  $("#tubes-value").val(tubesper);
+  $("#sidebar").show();
+  var tubessupp = Math.ceil(tubesper * 30);
+  $("#tubes-total").text(tubessupp);
+  $("#step3-btn").hide();
+  $("#step3-btn-back").hide();
+}
+
+function loadMonthSupply(freq) {
+  var tubessupp = Math.ceil($("#tubes-value").val() * parseInt(freq));
+  $("#tubes-total").text(tubessupp);
+}
+
+function reloadForm() {
+  window.location.href = "direct-measurement.html";
+}
