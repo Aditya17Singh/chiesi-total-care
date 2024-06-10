@@ -2669,31 +2669,3 @@ hero-banner.hero-bg-resize .banner-wrapper {
     margin-bottom: 0px;
   }
 }
-
-
-/* eb-calculator */
-.eb-calculator .title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: silver;
-}
-
-.eb-calculator .tab {
-  display: none;
-}
-
-.eb-calculator .title .tab-button.active {
-  display: block;
-  text-decoration: underline;
-  color: #B90066;
-}
-
-.eb-calculator .tab.active {
-  display: block;
-}
-
-.tab-button {
-  cursor: pointer;
-  padding: 10px 20px;
-}
