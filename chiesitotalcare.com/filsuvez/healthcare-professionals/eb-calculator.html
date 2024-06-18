@@ -241,582 +241,992 @@
       </div>
     </header>
     <main>
-      <section id="home" class="mb-0">
-        <!--section background image-->
-        <!--HeroBanner-->
-        <hero-banner class="container hero-banner hero-banner-main">
-          <div class="banner-medium">
-            <div class="banner-wrapper hero-imagemain_section82"></div>
-            <style type="text/css">
-              .banner-wrapper.hero-imagemain_section82 {
-                background-image: url("../../assets/images/apopharma4783-final_white-highlight%402x.png");
-              }
-              @media (min-width: 768px) {
-                .banner-wrapper.hero-imagemain_section82 {
-                  background-image: url("../../assets/images/apopharma4783-final_white-highlight%402x.png");
-                }
-              }
-              @media (min-width: 1024px) {
-                .banner-wrapper.hero-imagemain_section82 {
-                  background-image: url("../../assets/images/apopharma4783-final_white-highlight%402x.png");
-                }
-              }
-            </style>
-            <div class="d-lg-flex container">
-              <div class="col primary-content">
-                <div class="content-selector-wrapper">
-                  <!-- Start Component Paragraph -->
-                  <paragraph class="  ">
-                    <div class="text-left">
-                      <h1>
-                        One-stop
-                        <span style="white-space: nowrap">Patient Support</span>
-                      </h1>
-                      <p>
-                        Chiesi Total Care<sup>SM</sup> is a comprehensive
-                        support program that provides exceptional service for
-                        you and your patients. To enroll your patients, fill out
-                        the patient enrollment form online or print and fax the
-                        completed form to 1-877-914-0591.
-                      </p>
-                      <p class="pb-4">
-                        A single call to your dedicated Chiesi Total Care team
-                        and the completed&nbsp;enrollment form&nbsp;is all it
-                        takes to begin the process of getting a patient started
-                        on FILSUVEZ<sup>&reg;</sup> (birch triterpenes)
-                        therapy.*
-                      </p>
-                      <div class="mb-4 row">
-                        <div class="col-12 col-sm-7 pb-3 align-self-end pb-0">
-                          <div class="text-ctc-primary"></div>
-                        </div>
-                      </div></div></paragraph
-                  ><!-- End Component Paragraph -->
-                  <!-- Start Component Buttons -->
-                  <buttons class="hero-btn hero-wrapper">
-                    <div class="button-wrapper">
-                      <a
-                        href="https://resources.chiesiusa.com/Filsuvez/Filsuvez_Prescription_Form.pdf"
-                        rel="noreferrer"
-                        ga-tag="external"
-                        class="button hero-anchor"
-                        >Download Rx Form</a
-                      ><a
-                        href="https://resources.chiesiusa.com/Filsuvez/Filsuvez_Patient_Consent_Form.pdf"
-                        rel="noreferrer"
-                        ga-tag="external"
-                        class="button hero-anchor"
-                        >Download a Patient Enrollment Form</a
-                      >
-                    </div> </buttons
-                  ><!-- End Component Buttons -->
-                  <!-- Start Component Paragraph -->
-                  <paragraph class="  ">
-                    <div class="row mt-5">
-                      <div class="col-12 col-lg-5 col-xl-7">
-                        <img
-                          src="../../assets/images/filsuvez_topicalgel_logo_final_color%402x_mobile.png"
-                          width="168"
-                          height="53"
-                          class="img-fluid float-left pb-2 ml-lg-5"
-                          caption="false"
-                        />
-                      </div>
-                      <div class="col-12 col-lg-7 col-xl-5">
-                        <div class="text-ctc-primary pt-3">
-                          <p class="pt-4">
-                            Call toll free:<br />1-833-670-6464
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <p class="small-text">
-                      *Chiesi Total Care provides non-financial assistance to
-                      patients with and without prescription drug coverage.
-                    </p></paragraph
-                  ><!-- End Component Paragraph -->
-                  <!-- Start Component Paragraph -->
-                  <paragraph class="image-caption-one bg-white">
-                    <p style="color: #000000; margin: 0">
-                      Lesa, Chiesi Total Care Pharmacist
-                    </p></paragraph
-                  ><!-- End Component Paragraph -->
-                </div>
+      <section
+        id="home"
+        style="
+          background-image: url(../../assets/images/calculator-butterfly-desktop.png);
+          background-size: cover;
+          background-position: center;
+        "
+      >
+        <div class="container mb-0">
+          <div class="eb-calculator-hero">
+            <paragraph class="">
+              <div class="text-left">
+                <h1>
+                  <span style="white-space: nowrap"
+                    >Filsavez Tube Calculator</span
+                  >
+                </h1>
+                <p>
+                  The tube calculator is designed to offer assistance in
+                  determining the appropriate quantity of FILSUVEZ
+                  prescriptions. During the clinical trial, an average of 27
+                  tubes were utilized per month, with a median of 19 tubes per
+                  month. Final prescription quantities should be determined
+                  based on clinical assessment and individual patient
+                  requirements.
+                </p>
               </div>
-            </div>
-          </div></hero-banner
-        >
+            </paragraph>
+          </div>
+        </div>
       </section>
 
       <!-- eb calculator -->
       <section>
-        <div class="container eb-calculator">
-          <div class="title">
-            <div class="tab-button active" onclick="openTab(event, 'tab1')">
-              RULE OF 9'S
+        <div class="eb-calculator">
+          <div class="container">
+            <div class="title">
+              <div class="tab-button active" onclick="openTab(event, 'tab1')">
+                RULE OF 9'S
+              </div>
+              <div class="tab-button" onclick="openTab(event, 'tab2')">
+                DIRECT MEASUREMENT
+              </div>
             </div>
-            <div class="tab-button" onclick="openTab(event, 'tab2')">
-              DIRECT MEASUREMENT
-            </div>
-          </div>
-
-          <div id="tab1" class="tab active">
-            <div class="row">
-              <div class="col-lg-8" id="mainContent">
-                <!-- Calculator Area -->
-                <div id="step1-box" class="row option-box">
-                  <div class="option-box-header">
-                    <h3>Step 1 - Calculate BSA</h3>
-                    <p>
-                      BSA is estimated using the height (cm) and weight (kg) of
-                      the patient using the Du Bois formula<sup>1</sup>:
-                    </p>
-                  </div>
-                  <div class="col-md-4">
-                    <label>Gender</label>
-                    <select id="bsa-gender" class="form-control">
-                      <option value="male">Male</option>
-                      <option value="female">Female</option>
-                    </select>
-                  </div>
-                  <div class="col-md-4">
-                    <label>Weight</label>
-                    <input
-                      type="number"
-                      id="bsa-weight"
-                      class="form-control"
-                      value="0"
-                    />
-                    <select id="bsa-weight-units" class="form-control">
-                      <option value="pds">Pounds</option>
-                      <option value="kgs">Kilograms</option>
-                    </select>
-                  </div>
-                  <div class="col-md-4">
-                    <label>Height</label>
-                    <input
-                      type="number"
-                      id="bsa-height"
-                      class="form-control"
-                      value="0"
-                    />
-                    <input
-                      type="number"
-                      id="bsa-feet"
-                      placeholder="feet"
-                      class="form-control"
-                    />
-                    <input
-                      type="number"
-                      id="bsa-inches"
-                      placeholder="inches"
-                      class="form-control"
-                    />
-                    <select
-                      id="bsa-height-units"
-                      onchange="updateHeightInputs(this.value);"
-                      class="form-control"
-                    >
-                      <option value="cms">cms</option>
-                      <option value="inch">inches</option>
-                    </select>
-                  </div>
-                  <div class="col-lg-12">
-                    <hr />
-                  </div>
-                  <div class="col-lg-4">
-                    <div id="bsa-result" class="price-box">0</div>
-                  </div>
-                  <div class="col-lg-4 offset-md-4">
-                    <button
-                      id="step1-btn"
-                      onclick="loadStep1();"
-                      class="btn-form-func"
-                    >
-                      <span class="btn-form-func-content">Continue</span>
-                      <span class="icon"
-                        ><i class="fa fa-check" aria-hidden="true"></i
-                      ></span>
-                    </button>
-                  </div>
+            <section>
+              <paragraph class="text-center">
+                <div class="container">
+                  <p class="mb-0 eb-calculator-heading">
+                    Only eligible treatment areas should be included in the
+                    calculation.
+                  </p>
+                  <strong class="eb-calculator-sub-heading"
+                    >Eligible treatment areas include affected areas with open
+                    wounding.</strong
+                  >
                 </div>
-                <div id="step2-box" class="row option-box">
-                  <div class="option-box-header">
-                    <h3>Step 2 - Estimate Percentage affected area</h3>
-                    <p></p>
-                  </div>
-                  <div class="col-md-4">
-                    <label>Patient type</label>
-                    <select
-                      id="patient-type"
-                      onchange="updatePatientType(this.value);"
-                      class="form-control"
-                    >
-                      <option value="adult">Adult</option>
-                      <option value="kid">Child</option>
-                    </select>
-                    <div id="kid-box">
-                      <br />
-                      <label>Age of Patient</label>
-                      <select id="kid-age" class="form-control">
-                        <option value="0">0-1 year</option>
-                        <option value="1">1-4 years</option>
-                        <option value="5">5-9 years</option>
-                        <option value="10">10-14 years</option>
-                        <option value="15">15 years</option>
-                      </select>
+              </paragraph>
+            </section>
+            <section class="eligible">
+              <div class="container">
+                <div
+                  class="row justify-content-center justify-content-md-between"
+                >
+                  <div class="col-12 col-md-6 row">
+                    <div class="col-12 col-md-6">
+                      <p class="not-eligible-title mb-0">
+                        Areas affected but not eligible for treatment
+                      </p>
+                      <p>
+                        Erosions, blisters and crusts are not eligible and
+                        should not be included in the calculation for treatment.
+                      </p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <img
+                        class="eligible-img"
+                        src="../../assets/images/not-eligible.png"
+                        alt="not-eligible"
+                      />
                     </div>
                   </div>
-                  <div class="col-6 col-md-4">
-                    <label>Body Part</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      value="Head and Neck"
-                      disabled="true"
-                    />
-                    <input
-                      type="text"
-                      class="form-control"
-                      value="Trunk - Front"
-                      disabled="true"
-                    />
-                    <input
-                      type="text"
-                      class="form-control"
-                      value="Right Arm"
-                      disabled="true"
-                    />
-                    <input
-                      type="text"
-                      class="form-control"
-                      value="Left Arm"
-                      disabled="true"
-                    />
-                    <input
-                      type="text"
-                      class="form-control"
-                      value="Genitalia and perineum"
-                      disabled="true"
-                    />
-                    <input
-                      type="text"
-                      class="form-control"
-                      value="Right Leg and foot"
-                      disabled="true"
-                    />
-                    <input
-                      type="text"
-                      class="form-control"
-                      value="Left Leg and foot"
-                      disabled="true"
-                    />
-                    <input
-                      type="text"
-                      class="form-control"
-                      value="Trunk - Back"
-                      disabled="true"
-                    />
-                    <input
-                      type="text"
-                      id="butt-aff-label"
-                      class="form-control"
-                      value="Buttocks"
-                      disabled="true"
-                    />
-                  </div>
-                  <div class="col-6 col-md-4">
-                    <label>Affected %</label>
-                    <input
-                      type="number"
-                      id="head-aff"
-                      class="form-control"
-                      value="0"
-                    />
-                    <input
-                      type="number"
-                      id="trunkf-aff"
-                      class="form-control"
-                      value="0"
-                    />
-                    <input
-                      type="number"
-                      id="rarm-aff"
-                      class="form-control"
-                      value="0"
-                    />
-                    <input
-                      type="number"
-                      id="larm-aff"
-                      class="form-control"
-                      value="0"
-                    />
-                    <input
-                      type="number"
-                      id="gnp-aff"
-                      class="form-control"
-                      value="0"
-                    />
-                    <input
-                      type="number"
-                      id="rleg-aff"
-                      class="form-control"
-                      value="0"
-                    />
-                    <input
-                      type="number"
-                      id="lleg-aff"
-                      class="form-control"
-                      value="0"
-                    />
-                    <input
-                      type="number"
-                      id="trunkb-aff"
-                      class="form-control"
-                      value="0"
-                    />
-                    <input
-                      type="number"
-                      id="butt-aff"
-                      class="form-control"
-                      value="0"
-                    />
-                  </div>
-                  <div class="col-lg-12">
-                    <hr />
-                  </div>
-                  <div class="col-lg-4">
-                    <div id="aff-result" class="price-box">EPAA: 0</div>
-                  </div>
-                  <div class="col-lg-4">
-                    <button
-                      id="step2-btn-back"
-                      onclick="backStep1();"
-                      class="btn-form-func btn-form-func-alt-color"
-                    >
-                      <span class="btn-form-func-content">Back</span>
-                      <span class="icon"
-                        ><i class="fa fa-chevron-left" aria-hidden="true"></i
-                      ></span>
-                    </button>
-                  </div>
-                  <div class="col-lg-4">
-                    <button
-                      id="step2-btn"
-                      onclick="loadStep2();"
-                      class="btn-form-func"
-                    >
-                      <span class="btn-form-func-content">Continue</span>
-                      <span class="icon"
-                        ><i class="fa fa-check" aria-hidden="true"></i
-                      ></span>
-                    </button>
+                  <div class="col-12 col-md-6 row">
+                    <div class="col-12 col-md-6">
+                      <p class="eligible-title mb-0">
+                        Areas eligible for treatment
+                      </p>
+                      <p>
+                        Open wounds are the only eligible treatment areas for
+                        Filsuvez.
+                      </p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <img
+                        class="eligible-img"
+                        src="../../assets/images/eligible.png"
+                        alt="eligible"
+                      />
+                    </div>
                   </div>
                 </div>
-                <div id="step3-box" class="row option-box">
-                  <div class="option-box-header">
-                    <h3>Step 3 - Calculate actual affected area</h3>
-                    <p></p>
-                  </div>
-                  <div class="col-md-4">
-                    <div id="aaa-result" class="price-box"></div>
-                  </div>
-                  <div class="col-lg-4">
-                    <button
-                      id="step3-btn-back"
-                      onclick="backStep2();"
-                      class="btn-form-func btn-form-func-alt-color"
-                    >
-                      <span class="btn-form-func-content">Back</span>
-                      <span class="icon"
-                        ><i class="fa fa-chevron-left" aria-hidden="true"></i
-                      ></span>
-                    </button>
-                  </div>
-                  <div class="col-lg-4">
-                    <button
-                      id="step3-btn"
-                      onclick="loadStep3();"
-                      class="btn-form-func"
-                    >
-                      <span class="btn-form-func-content">Continue</span>
-                      <span class="icon"
-                        ><i class="fa fa-check" aria-hidden="true"></i
-                      ></span>
-                    </button>
-                  </div>
-                </div>
-                <!-- Calculator Area End -->
               </div>
-              <div class="col-lg-4" id="sidebar">
-                <!-- Order Container -->
-                <div id="orderContainer" class="theiaStickySidebar">
-                  <div class="row">
-                    <div class="col-md-12">
-                      <input
-                        type="hidden"
-                        id="bsa-value"
-                        class="form-control"
-                        value="0"
-                      />
-                      <input
-                        type="hidden"
-                        id="epaa-value"
-                        class="form-control"
-                        value="0"
-                      />
-                      <input
-                        type="hidden"
-                        id="aaa-value"
-                        class="form-control"
-                        value="0"
-                      />
-                      <input
-                        type="hidden"
-                        id="tubes-value"
-                        class="form-control"
-                        value="0"
-                      />
-                      <h3>Total tubes per application</h3>
-                      <ul id="orderSumList">
-                        <div id="tubes-per" class="price-box"></div>
-                      </ul>
-                      <h3>Quantities per month</h3>
-                      <div class="row total-container">
-                        <div class="col-12 p-0">
-                          <label>Dressings changed</label>
-                          <select
-                            onchange="loadMonthSupply(this.value);"
-                            class="form-control"
+            </section>
+            <div id="tab1" class="tab active rule-of-9 mt-5">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-8" id="mainContent">
+                    <!-- Calculator Area -->
+                    <div id="step1-box" class="row option-box">
+                      <div class="option-box-header">
+                        <h3 class="option-box-title">
+                          <em><span>Step 1 </span></em> Calculate BSA
+                        </h3>
+                        <p>
+                          BSA is estimated using the height (cm) and weight (kg)
+                          of the patient using the Du Bois formula<sup>1</sup>:
+                        </p>
+                      </div>
+                      <div class="col-md-4">
+                        <!-- <label class="box-label">Gender</label>
+                        <select id="bsa-gender" class="form-control">
+                          <option value="male">Male</option>
+                          <option value="female">Female</option>
+                        </select> -->
+
+                        <div class="custom-dropdown">
+                          <label class="box-label">Gender</label>
+                          <div
+                            class="select-box"
+                            id="bsa-gender"
+                            data-placeholder="Select an option"
                           >
-                            <option value="30">Everyday</option>
-                            <option value="15">Every 2 days</option>
-                            <option value="10">Every 3 days</option>
-                            <option value="8">Every 4 days</option>
-                          </select>
-                          <br />
-                          <br />
+                            Select an option
+                          </div>
+                          <div
+                            class="options-container"
+                            id="genderOptionsContainer"
+                          >
+                            <div class="option" data-value="male">Male</div>
+                            <div class="option" data-value="female">Female</div>
+                          </div>
                         </div>
-                        <div class="col-8 p-0">
-                          <strong>Tubes to provide adequate treatment</strong
-                          ><input
-                            type="text"
-                            id="totalTitle"
-                            class="summaryInput"
-                            name="totallabel"
-                            value=""
-                            disabled
+                      </div>
+                      <div class="col-md-4">
+                        <label class="box-label">Weight</label>
+                        <input
+                          type="number"
+                          id="bsa-weight"
+                          class="form-control mb-2"
+                          placeholder="0"
+                        />
+                        <!-- <select id="bsa-weight-units" class="form-control">
+                        <option value="pds">Pounds</option>
+                        <option value="kgs">Kilograms</option>
+                      </select> -->
+
+                        <div class="custom-dropdown">
+                          <div
+                            class="select-box form-control"
+                            id="bsa-weight-units"
+                            data-placeholder="Select an option"
+                          >
+                            Select an option
+                          </div>
+                          <div
+                            class="options-container"
+                            id="weightOptionsContainer"
+                          >
+                            <div class="option" data-value="pds">Pounds</div>
+                            <div class="option" data-value="kgs">Kilograms</div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4">
+                        <label class="box-label">Height</label>
+                        <input
+                          type="number"
+                          id="bsa-height"
+                          class="form-control mb-2"
+                          placeholder="0"
+                        />
+                        <input
+                          type="number"
+                          id="bsa-feet"
+                          placeholder="feet"
+                          class="form-control"
+                        />
+                        <input
+                          type="number"
+                          id="bsa-inches"
+                          placeholder="inches"
+                          class="form-control"
+                        />
+                        <!-- <select
+                          id="bsa-height-units"
+                          onchange="updateHeightInputs(this.value);"
+                          class="form-control"
+                        >
+                          <option value="cms">cms</option>
+                          <option value="inch">inches</option>
+                        </select> -->
+
+                        <div class="custom-dropdown">
+                          <div
+                            class="select-box"
+                            id="bsa-height-units"
+                            data-placeholder="Select an option"
+                          >
+                            Select an option
+                          </div>
+                          <div
+                            class="options-container"
+                            id="heightOptionsContainer"
+                          >
+                            <div class="option" data-value="cms">cms</div>
+                            <div class="option" data-value="inch">inches</div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- <div class="col-lg-12">
+                      <hr />
+                    </div> -->
+                      <div class="col-lg-4">
+                        <div id="bsa-result" class="price-box">0</div>
+                      </div>
+                      <div class="col-lg-4 offset-md-4">
+                        <!-- <button
+                        id="step1-btn"
+                        onclick="loadStep1();"
+                        class="btn-form-func"
+                      >
+                        <span class="btn-form-func-content">Continue</span>
+                        <span class="icon"
+                          ><i class="fa fa-check" aria-hidden="true"></i
+                        ></span>
+                      </button> -->
+
+                        <buttons
+                          id="step1-btn"
+                          onclick="loadStep1();"
+                          class="hero-btn"
+                        >
+                          <div class="button-wrapper">
+                            <span class="button mt-3">Continue</span>
+                          </div>
+                        </buttons>
+                      </div>
+                      <div
+                        id="error-message-for-step1"
+                        class="alert alert-danger"
+                        style="display: none"
+                      ></div>
+                    </div>
+                    <div id="step2-box" class="row option-box mt-5">
+                      <div class="option-box-header">
+                        <h3 class="option-box-title">
+                          <em><span>Step 2 </span></em> Estimate Percentage
+                          affected area
+                        </h3>
+                        <p></p>
+                      </div>
+                      <div class="col-md-4">
+                        <label class="box-label">Patient type</label>
+                        <!-- <select
+                          id="patient-type"
+                          onchange="updatePatientType(this.value);"
+                          class="form-control"
+                        >
+                          <option value="adult">Adult</option>
+                          <option value="kid">Child</option>
+                        </select> -->
+                        <div class="custom-dropdown">
+                          <!-- <label class="box-label">Gender</label> -->
+                          <div
+                            class="select-box"
+                            id="patient-type"
+                            data-placeholder="Select an option"
+                          >
+                            Select an option
+                          </div>
+                          <div
+                            class="options-container"
+                            id="patientTypeOptionsContainer"
+                          >
+                            <div class="option" data-value="adult">Adult</div>
+                            <div class="option" data-value="kid">Child</div>
+                          </div>
+                        </div>
+
+                        <div id="kid-box">
+                          <br />
+                          <label>Age of Patient</label>
+                          <!-- <select id="kid-age" class="form-control">
+                            <option value="0">0-1 year</option>
+                            <option value="1">1-4 years</option>
+                            <option value="5">5-9 years</option>
+                            <option value="10">10-14 years</option>
+                            <option value="15">15 years</option>
+                          </select> -->
+
+                          <div class="custom-dropdown">
+                            <!-- <label class="box-label">Gender</label> -->
+                            <div
+                              class="select-box"
+                              id="kid-age"
+                              data-placeholder="Select an option"
+                            >
+                              Select an option
+                            </div>
+                            <div
+                              class="options-container"
+                              id="kidOptionsContainer"
+                            >
+                              <div class="option" data-value="0">0-1 year</div>
+                              <div class="option" data-value="1">1-4 years</div>
+                              <div class="option" data-value="5">5-9 years</div>
+                              <div class="option" data-value="10">
+                                10-14 years
+                              </div>
+                              <div class="option" data-value="15">15 years</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6 col-md-4">
+                        <label class="box-label">Body Part</label>
+                        <input
+                          type="text"
+                          class="form-control mb-2"
+                          value="Head and Neck"
+                          disabled="true"
+                        />
+                        <input
+                          type="text"
+                          class="form-control mb-2"
+                          value="Trunk - Front"
+                          disabled="true"
+                        />
+                        <input
+                          type="text"
+                          class="form-control mb-2"
+                          value="Right Arm"
+                          disabled="true"
+                        />
+                        <input
+                          type="text"
+                          class="form-control mb-2"
+                          value="Left Arm"
+                          disabled="true"
+                        />
+                        <input
+                          type="text"
+                          class="form-control mb-2"
+                          value="Genitalia and perineum"
+                          disabled="true"
+                        />
+                        <input
+                          type="text"
+                          class="form-control mb-2"
+                          value="Right Leg and foot"
+                          disabled="true"
+                        />
+                        <input
+                          type="text"
+                          class="form-control mb-2"
+                          value="Left Leg and foot"
+                          disabled="true"
+                        />
+                        <input
+                          type="text"
+                          class="form-control"
+                          value="Trunk - Back"
+                          disabled="true"
+                        />
+                        <input
+                          type="text"
+                          id="butt-aff-label"
+                          class="form-control"
+                          value="Buttocks"
+                          disabled="true"
+                        />
+                      </div>
+                      <div class="col-6 col-md-4">
+                        <label class="box-label">Eligible %</label>
+                        <input
+                          type="number"
+                          id="head-aff"
+                          class="form-control mb-2"
+                          placeholder="0"
+                        />
+                        <input
+                          type="number"
+                          id="trunkf-aff"
+                          class="form-control mb-2"
+                          placeholder="0"
+                        />
+                        <input
+                          type="number"
+                          id="rarm-aff"
+                          class="form-control mb-2"
+                          placeholder="0"
+                        />
+                        <input
+                          type="number"
+                          id="larm-aff"
+                          class="form-control mb-2"
+                          placeholder="0"
+                        />
+                        <input
+                          type="number"
+                          id="gnp-aff"
+                          class="form-control mb-2"
+                          placeholder="0"
+                        />
+                        <input
+                          type="number"
+                          id="rleg-aff"
+                          class="form-control mb-2"
+                          placeholder="0"
+                        />
+                        <input
+                          type="number"
+                          id="lleg-aff"
+                          class="form-control mb-2"
+                          placeholder="0"
+                        />
+                        <input
+                          type="number"
+                          id="trunkb-aff"
+                          class="form-control"
+                          placeholder="0"
+                        />
+                        <input
+                          type="number"
+                          id="butt-aff"
+                          class="form-control"
+                          placeholder="0"
+                        />
+                      </div>
+                      <!-- <div class="col-lg-12">
+                      <hr />
+                    </div> -->
+                      <div class="col-lg-4">
+                        <div id="aff-result" class="price-box">EPAA: 0</div>
+                      </div>
+                      <div class="col-lg-4">
+                        <!-- <button
+                        id="step2-btn-back"
+                        onclick="backStep1();"
+                        class="btn-form-func btn-form-func-alt-color"
+                      >
+                        <span class="btn-form-func-content">Back</span>
+                        <span class="icon"
+                          ><i class="fa fa-chevron-left" aria-hidden="true"></i
+                        ></span>
+                      </button> -->
+
+                        <buttons id="step2-btn-back" onclick="backStep1();">
+                          <div class="button-wrapper">
+                            <span class="button mt-3">Back</span>
+                          </div>
+                        </buttons>
+                      </div>
+                      <div class="col-lg-4">
+                        <!-- <button
+                        id="step2-btn"
+                        onclick="loadStep2();"
+                        class="btn-form-func"
+                      >
+                        <span class="btn-form-func-content">Continue</span>
+                        <span class="icon"
+                          ><i class="fa fa-check" aria-hidden="true"></i
+                        ></span>
+                      </button> -->
+
+                        <buttons
+                          id="step2-btn"
+                          onclick="loadStep2();"
+                          class="hero-btn"
+                        >
+                          <div class="button-wrapper mt-3">
+                            <span class="button">Continue</span>
+                          </div>
+                        </buttons>
+                      </div>
+                      <div
+                        id="error-message-for-step2"
+                        class="alert alert-danger"
+                        style="display: none"
+                      ></div>
+                    </div>
+                    <div id="step3-box" class="row option-box mt-5">
+                      <div class="option-box-header">
+                        <h3 class="option-box-title">
+                          <em><span>Step 3 </span></em> Calculate actual
+                          affected area
+                        </h3>
+                        <p></p>
+                      </div>
+                      <div class="col-md-4">
+                        <div id="aaa-result" class="price-box mt-3"></div>
+                      </div>
+                      <div class="col-lg-4">
+                        <!-- <button
+                        id="step3-btn-back"
+                        onclick="backStep2();"
+                        class="btn-form-func btn-form-func-alt-color"
+                      >
+                        <span class="btn-form-func-content">Back</span>
+                        <span class="icon"
+                          ><i class="fa fa-chevron-left" aria-hidden="true"></i
+                        ></span>
+                      </button> -->
+
+                        <buttons id="step3-btn-back" onclick="backStep2();">
+                          <div class="button-wrapper">
+                            <span class="button mt-3">Back</span>
+                          </div>
+                        </buttons>
+                      </div>
+                      <div class="col-lg-4">
+                        <!-- <button
+                        id="step3-btn"
+                        onclick="loadStep3();"
+                        class="btn-form-func"
+                      >
+                        <span class="btn-form-func-content">Continue</span>
+                        <span class="icon"
+                          ><i class="fa fa-check" aria-hidden="true"></i
+                        ></span>
+                      </button> -->
+
+                        <buttons
+                          id="step3-btn"
+                          onclick="loadStep3();"
+                          class="hero-btn"
+                        >
+                          <div class="button-wrapper mt-3">
+                            <span class="button">Continue</span>
+                          </div>
+                        </buttons>
+                      </div>
+                    </div>
+                    <!-- Calculator Area End -->
+                  </div>
+                  <div class="col-lg-4" id="sidebar">
+                    <div id="orderContainer" class="theiaStickySidebar">
+                      <div class="row sidebar-box">
+                        <div class="col-md-12">
+                          <!-- Hidden inputs and other elements -->
+                          <input
+                            type="hidden"
+                            id="bsa-value"
+                            class="form-control"
+                            value="0"
+                          />
+                          <input
+                            type="hidden"
+                            id="epaa-value"
+                            class="form-control"
+                            value="0"
+                          />
+                          <input
+                            type="hidden"
+                            id="aaa-value"
+                            class="form-control"
+                            value="0"
+                          />
+                          <input
+                            type="hidden"
+                            id="tubes-value"
+                            class="form-control"
+                            value="0"
+                          />
+
+                          <!-- Other elements -->
+                          <h3>Total tubes required</h3>
+                          <div
+                            class="row align-items-center mb-2"
+                            id="orderSumList"
+                          >
+                            <div class="col-4 text-center">
+                              <div id="tubes-per" class="price-box"></div>
+                            </div>
+                            <strong class="col-8"
+                              >Total tubes per application</strong
+                            >
+                          </div>
+
+                          <div class="row total-container pt-4">
+                            <div class="col-12 p-0">
+                              <label class="box-label">Dressings changed</label>
+                              <!-- <select
+                                onchange="loadMonthSupply(this.value);"
+                                class="form-control"
+                              >
+                                <option value="30">Everyday</option>
+                                <option value="15">Every 2 days</option>
+                                <option value="10">Every 3 days</option>
+                                <option value="8">Every 4 days</option>
+                              </select> -->
+
+                              <div class="custom-dropdown">
+                                <div
+                                  class="select-box"
+                                  id="dressing-change"
+                                  data-placeholder="Select an option"
+                                >
+                                  Select an option
+                                </div>
+                                <div
+                                  class="options-container"
+                                  id="dressingsChangeOptionsContainer"
+                                >
+                                  <div class="option" data-value="30">
+                                    Everyday
+                                  </div>
+                                  <div class="option" data-value="15">
+                                    Every 2 days
+                                  </div>
+                                  <div class="option" data-value="10">
+                                    Every 3 days
+                                  </div>
+                                  <div class="option" data-value="8">
+                                    Every 4 days
+                                  </div>
+                                </div>
+                              </div>
+
+                              <br /><br />
+                            </div>
+                            <div class="col-3 p-0">
+                              <div id="tubes-total" class="price-box"></div>
+                            </div>
+                            <div class="col-8 p-0 offset-md-1">
+                              <strong
+                                >Tubes to provide adequate treatment</strong
+                              >
+                            </div>
+
+                            <!-- Button to toggle form -->
+                            <div class="col-lg-12">
+                              <buttons id="email-btn" class="hero-btn">
+                                <div class="button-wrapper mt-3">
+                                  <span class="button">Email results</span>
+                                </div>
+                              </buttons>
+                            </div>
+
+                            <!-- Form container with animation -->
+                            <div class="col-lg-12">
+                              <div
+                                id="form-container-calculator"
+                                class="form-container-calculator hidden-calculator-form"
+                              >
+                                <form id="simple-form">
+                                  <div class="form-group">
+                                    <label for="first-name">First Name:</label>
+                                    <input
+                                      type="text"
+                                      id="first-name"
+                                      name="first-name"
+                                      class="form-control"
+                                    />
+                                    <div
+                                      class="error-message"
+                                      id="error-first-name"
+                                    ></div>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="last-name">Last Name:</label>
+                                    <input
+                                      type="text"
+                                      id="last-name"
+                                      name="last-name"
+                                      class="form-control"
+                                    />
+                                    <div
+                                      class="error-message"
+                                      id="error-last-name"
+                                    ></div>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="email">Email:</label>
+                                    <input
+                                      type="email"
+                                      id="email"
+                                      name="email"
+                                      class="form-control"
+                                    />
+                                    <div
+                                      class="error-message"
+                                      id="error-email"
+                                    ></div>
+                                  </div>
+                                  <!-- <button id="submit-btn" type="submit">
+                                    Submit
+                                  </button> -->
+
+                                  <buttons
+                                    id="submit-btn"
+                                    type="submit"
+                                    class="hero-btn"
+                                  >
+                                    <div class="button-wrapper mt-3">
+                                      <span class="button"> Submit </span>
+                                    </div>
+                                  </buttons>
+                                </form>
+                                <div id="error-message-form"></div>
+                                <div
+                                  id="success-message"
+                                  class="success-message"
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="tab2" class="tab direct-measurement rule-of-9 mt-5">
+              <div class="container">
+                <!-- Form -->
+                <div class="row">
+                  <div class="col-lg-8" id="mainContent">
+                    <!-- Calculator Area -->
+                    <div id="step3-box" class="option-box">
+                      <div class="option-box-header">
+                        <h3 class="option-box-title">
+                          <em><span>Step 1 </span></em> Actual affected area
+                        </h3>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-4">
+                          <label class="box-label">Eligible %</label>
+                          <input
+                            type="number"
+                            id="aaa-value-direct-measurement"
+                            class="form-control"
+                            placeholder="0"
                           />
                         </div>
-                        <div class="col-3 offset-md-1 p-0">
-                          <div id="tubes-total" class="price-box"></div>
-                        </div>
-                        <div class="col-lg-12">
-                          <button
-                            id="step4-btn"
-                            onclick="reloadForm();"
-                            class="btn-form-func"
+                        <div class="col-lg-4">
+                          <label class="box-label">Units</label>
+                          <!-- <select
+                            id="bsa-height-units"
+                            onchange="updateHeightInputsDirectMeasurement(this.value);"
+                            class="form-control"
                           >
-                            <span class="btn-form-func-content">Restart</span>
-                            <span class="icon"
-                              ><i class="fa fa-check" aria-hidden="true"></i
-                            ></span>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row footer">
-                    <div class="col-lg-12 text-left">
-                      <small>&copy; 2021 AMRYT.</small>
-                    </div>
-                  </div>
-                </div>
-                <!-- Order Container End -->
-              </div>
-            </div>
-          </div>
+                            <option value="cms">cms2</option>
+                            <option value="inch">inches2</option>
+                          </select> -->
 
-          <div id="tab2" class="tab">
-            <div class="container">
-              <!-- Form -->
-              <div class="row">
-                <div class="col-lg-8" id="mainContent">
-                  <!-- Calculator Area -->
-                  <div id="step3-box" class="row option-box">
-                    <div class="option-box-header">
-                      <h3>Step 1 - Actual affected area</h3>
-                      <p></p>
+                          <div class="custom-dropdown">
+                            <div
+                              class="select-box"
+                              id="bsa-height-units-direct"
+                              data-placeholder="Select an option"
+                            >
+                              Select an option
+                            </div>
+                            <div
+                              class="options-container"
+                              id="heightOptionsContainerDirect"
+                            >
+                              <div class="option" data-value="cms">cms</div>
+                              <div class="option" data-value="inch">inches</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-4">
+                          <buttons
+                            id="step3-btn-direct-measurement"
+                            onclick="loadStep3DirectMeasurement();"
+                            class="hero-btn"
+                          >
+                            <div class="button-wrapper mt-0">
+                              <span class="button">Continue</span>
+                            </div>
+                          </buttons>
+                        </div>
+                      </div>
+                      <div id="error-message" style="display: none; color: red">
+                        Please enter a value greater than 0.
+                      </div>
                     </div>
-                    <div class="col-md-4">
-                      <label>Actual affected area</label>
-                      <input type="number" id="aaa-value" class="form-control" value="0" />
-                    </div>
-                    <div class="col-lg-4">
-                      <label>Units</label>
-                      <select id="bsa-height-units" onchange="updateHeightInputs(this.value);" class="form-control">
-                        <option value="cms">cms2</option>
-                        <option value="inch">inches2</option>
-                      </select>
-                    </div>
-                    <div class="col-lg-4">
-                      <button id="step3-btn" onclick="loadStep3();" class="btn-form-func">
-                        <span class="btn-form-func-content">Continue</span>
-                        <span class="icon"><i class="fa fa-check" aria-hidden="true"></i></span>
-                      </button>
-                    </div>
+                    <!-- Calculator Area End -->
                   </div>
-                  <!-- Calculator Area End -->
-                </div>
-                <div class="col-lg-4" id="sidebar">
-                  <!-- Order Container -->
-                  <div id="orderContainer" class="theiaStickySidebar">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <input type="hidden" id="aaa-value" class="form-control" value="0" />
-                        <input type="hidden" id="tubes-value" class="form-control" value="0" />
-                        <h3>Total tubes per application</h3>
-                        <ul id="orderSumList">
-                          <div id="tubes-per" class="price-box"></div>
-                        </ul>
-                        <h3>Quantities per month</h3>
-                        <div class="row total-container">
-                          <div class="col-12 p-0">
-                            <label>Dressings changed</label>
-                            <select onchange="loadMonthSupply(this.value);" class="form-control">
-                              <option value="30">Everyday</option>
-                              <option value="15">Every 2 days</option>
-                              <option value="10">Every 3 days</option>
-                              <option value="8">Every 4 days</option>
-                            </select>
-                          <br>
-                          <br>
+                  <div class="col-lg-4" id="sidebar-direct-measurement">
+                    <!-- Order Container -->
+                    <div id="orderContainer" class="theiaStickySidebar">
+                      <div class="row sidebar-box">
+                        <div class="col-md-12">
+                          <!-- <input
+                            type="hidden"
+                            id="aaa-value-direct-measurement"
+                            class="form-control"
+                            placeholder="01"
+                          />
+                          <input
+                            type="hidden"
+                            id="tubes-value-direct-measurement"
+                            class="form-control"
+                            placeholder="0"
+                          /> -->
+                          <h3 class="option-box-title">Total tubes required</h3>
+                          <!-- <strong>Total tubes per application</strong>
+                          <ul id="orderSumList">
+                            <div
+                              id="tubes-per-direct-measurement"
+                              class="price-box"
+                            ></div>
+                          </ul> -->
+                          <div
+                            class="row align-items-center mb-2"
+                            id="orderSumList"
+                          >
+                            <div class="col-4 text-center">
+                              <div
+                                id="tubes-per-direct-measurement"
+                                class="price-box"
+                              ></div>
+                            </div>
+                            <strong class="col-8"
+                              >Total tubes per application</strong
+                            >
                           </div>
-                          <div class="col-8 p-0">
-                            <strong>Tubes to provide adequate treatment</strong><input type="text" id="totalTitle" class="summaryInput" name="totallabel" value="" disabled />
-                          </div>
-                          <div class="col-3 offset-md-1 p-0">
-                            <div id="tubes-total" class="price-box"></div>
-                          </div>
-                          <div class="col-lg-12">
-                            <button id="step4-btn" onclick="reloadForm();" class="btn-form-func">
-                              <span class="btn-form-func-content">Restart</span>
-                              <span class="icon"><i class="fa fa-check" aria-hidden="true"></i></span>
-                            </button>
+                          <div class="row total-container">
+                            <div class="col-12 p-0">
+                              <label class="box-label">Dressings changed</label>
+
+                              <div class="custom-dropdown">
+                                <div
+                                  class="select-box"
+                                  id="dressing-change-direct"
+                                  data-placeholder="Select an option"
+                                >
+                                  Select an option
+                                </div>
+                                <div
+                                  class="options-container"
+                                  id="dressingsChangeOptionsContainerDirect"
+                                >
+                                  <div class="option" data-value="30">
+                                    Everyday
+                                  </div>
+                                  <div class="option" data-value="15">
+                                    Every 2 days
+                                  </div>
+                                  <div class="option" data-value="10">
+                                    Every 3 days
+                                  </div>
+                                  <div class="option" data-value="8">
+                                    Every 4 days
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- <select
+                                onchange="loadMonthSupplyDirectMeasurement(this.value);"
+                                class="form-control"
+                              >
+                                <option value="30">Everyday</option>
+                                <option value="15">Every 2 days</option>
+                                <option value="10">Every 3 days</option>
+                                <option value="8">Every 4 days</option>
+                              </select> -->
+                              <br />
+                              <br />
+                            </div>
+                            <div class="col-3 p-0">
+                              <div
+                                id="tubes-total-direct-measurement"
+                                class="price-box"
+                              ></div>
+                            </div>
+                            <div class="col-8 offset-md-1 p-0">
+                              <strong
+                                >Tubes to provide adequate treatment</strong
+                              >
+                            </div>
+                            <div class="col-lg-12">
+                              <buttons
+                                id="step4-btn"
+                                onclick="reloadForm();"
+                                class="hero-btn"
+                              >
+                                <div class="button-wrapper mt-3">
+                                  <span class="button">Restart</span>
+                                </div>
+                              </buttons>
+                            </div>
+                            <div class="col-lg-12">
+                              <buttons id="email-btn-direct" class="hero-btn">
+                                <div class="button-wrapper mt-3">
+                                  <span class="button">Email results</span>
+                                </div>
+                              </buttons>
+                            </div>
+
+                            <!-- Form container with animation -->
+                            <div class="col-lg-12">
+                              <div
+                                id="form-container-calculator-direct"
+                                class="form-container-calculator hidden-calculator-form"
+                              >
+                                <form
+                                  id="simple-form"
+                                  onsubmit="return validateForm();"
+                                >
+                                  <div class="form-group">
+                                    <label for="first-name">First Name:</label>
+                                    <input
+                                      type="text"
+                                      id="first-name-direct"
+                                      name="first-name-direct"
+                                      class="form-control"
+                                    />
+                                    <div
+                                      class="error-message-direct"
+                                      id="error-first-name-direct"
+                                      style="color: red"
+                                    ></div>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="last-name">Last Name:</label>
+                                    <input
+                                      type="text"
+                                      id="last-name-direct"
+                                      name="last-name-direct"
+                                      class="form-control"
+                                    />
+                                    <div
+                                      class="error-message-direct"
+                                      id="error-last-name-direct"
+                                      style="color: red"
+                                    ></div>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="email">Email:</label>
+                                    <input
+                                      type="email"
+                                      id="email-direct"
+                                      name="email-direct"
+                                      class="form-control"
+                                    />
+                                    <div
+                                      class="error-message-direct"
+                                      id="error-email-direct"
+                                      style="color: red"
+                                    ></div>
+                                  </div>
+
+                                  <button
+                                    id="submit-btn-direct"
+                                    type="submit"
+                                    class="hero-btn"
+                                  >
+                                    <div class="button-wrapper mt-3">
+                                      <span class="button"> Submit </span>
+                                    </div>
+                                  </button>
+                                </form>
+                                <div
+                                  id="error-message-form-direct"
+                                  style="color: red"
+                                ></div>
+                                <div
+                                  id="success-message-direct"
+                                  class="success-message"
+                                  style="color: green"
+                                ></div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="row footer">
-                      <div class="col-lg-12 text-left">
-                        <small>&copy; 2021 AMRYT.</small>
-                      </div>
-                    </div>
+                    <!-- Order Container End -->
                   </div>
-                  <!-- Order Container End -->
                 </div>
+                <!-- Form End -->
               </div>
-              <!-- Form End -->
             </div>
           </div>
         </div>
